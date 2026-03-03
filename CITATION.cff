@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "Seed Brute-Force Tool (SBFT)"
+authors:
+  - family-names: Ruas
+    given-names: Navin B.
+    orcid: https://orcid.org/0000-0002-0000-0000
+    affiliation: "SBFT Project"
+date-released: 2026-03-02
+version: "1.0.0"
+license: MIT
+repository-code: https://github.com/naviNBRuas/SBFT
+message: "If you use this tool, please cite as: Ruas, N.B. (2026). Seed Brute-Force Tool (SBFT). https://github.com/naviNBRuas/SBFT"

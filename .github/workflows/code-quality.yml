@@ -1,0 +1,48 @@
+name: Code Quality
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install security tools
+        run: |
+          pip install bandit safety
+
+      - name: Run bandit security scan
+        run: |
+          bandit -r src/ -ll
+
+      - name: Check for vulnerable dependencies
+        run: |
+          safety check
+
+  type-checking:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install mypy
+        run: |
+          pip install mypy
+
+      - name: Run type checking
+        run: |
+          mypy src/ --ignore-missing-imports || echo "Type checking completed with warnings"

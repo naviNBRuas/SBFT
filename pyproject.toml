@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sbft-academic"
+version = "1.0.0"
+description = "Seed Brute-Force Tool (SBFT) - An educational tool for exploring BIP39 security."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Education",
+]
+dependencies = [
+    "bitcoinlib",
+    "filelock",
+    "aiohttp>=3.8.0",
+    "psutil>=5.8.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.urls]
+"Homepage" = "https://github.com/naviNBRuas/SBFT"
+"Bug Tracker" = "https://github.com/naviNBRuas/SBFT/issues"
